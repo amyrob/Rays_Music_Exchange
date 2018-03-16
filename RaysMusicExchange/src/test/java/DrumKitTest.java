@@ -1,9 +1,9 @@
-import Instruments.DrumKit;
-import Instruments.InstrumentGroupType;
+import Shop.Instruments.DrumKit;
+import Shop.Instruments.InstrumentGroupType;
 import org.junit.Before;
 import org.junit.Test;
 
-import static Instruments.InstrumentGroupType.PERCUSSION;
+import static Shop.Instruments.InstrumentGroupType.PERCUSSION;
 import static org.junit.Assert.assertEquals;
 
 public class DrumKitTest {
@@ -11,7 +11,7 @@ public class DrumKitTest {
 
     @Before
     public void before() {
-    drumKit = new DrumKit(5, "Rock", InstrumentGroupType.PERCUSSION, "Birch", "Pearl");
+    drumKit = new DrumKit(5, "Rock", InstrumentGroupType.PERCUSSION, "Birch", "Pearl", 249, 499);
     }
 
     @Test
@@ -37,6 +37,10 @@ public class DrumKitTest {
     @Test
     public void canPlay() {
         assertEquals("*cymbal crash*", drumKit.play("*cymbal crash*"));
+    }
+    @Test
+    public void canGetMarkUp() {
+        assertEquals(250, drumKit.calculateMarkUp());
     }
 
 }

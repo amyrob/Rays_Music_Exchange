@@ -1,10 +1,9 @@
-import Instruments.Instrument;
-import Instruments.InstrumentGroupType;
-import Instruments.Piano;
+import Shop.Instruments.InstrumentGroupType;
+import Shop.Instruments.Piano;
 import org.junit.Before;
 import org.junit.Test;
 
-import static Instruments.InstrumentGroupType.KEYS;
+import static Shop.Instruments.InstrumentGroupType.KEYS;
 import static org.junit.Assert.assertEquals;
 
 public class PianoTest {
@@ -13,7 +12,7 @@ public class PianoTest {
 
     @Before
     public void before() {
-        piano = new Piano(49, "Digital", InstrumentGroupType.KEYS, "Pine", "Fazioli");
+        piano = new Piano(49, "Digital", InstrumentGroupType.KEYS, "Pine", "Fazioli", 199, 399);
     }
     @Test
     public void canGetNoKeys() {
@@ -39,5 +38,9 @@ public class PianoTest {
     @Test
     public void canPlay() {
         assertEquals("Plinky plonky", piano.play("Plinky plonky"));
+    }
+    @Test
+    public void canGetMarkUp() {
+        assertEquals(200, piano.calculateMarkUp());
     }
 }

@@ -1,4 +1,4 @@
-package Instruments;
+package Shop.Instruments;
 
 public enum InstrumentGroupType {
     STRING,

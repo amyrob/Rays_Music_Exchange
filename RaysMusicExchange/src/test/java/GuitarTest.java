@@ -1,9 +1,9 @@
-import Instruments.Guitar;
-import Instruments.InstrumentGroupType;
+import Shop.Instruments.Guitar;
+import Shop.Instruments.InstrumentGroupType;
 import org.junit.Before;
 import org.junit.Test;
 
-import static Instruments.InstrumentGroupType.STRING;
+import static Shop.Instruments.InstrumentGroupType.STRING;
 import static org.junit.Assert.assertEquals;
 
 public class GuitarTest {
@@ -12,7 +12,7 @@ public class GuitarTest {
 
     @Before
     public void before() {
-        guitar = new Guitar(6, "Electric", InstrumentGroupType.STRING, "Ash", "Fender");
+        guitar = new Guitar(6, "Electric", InstrumentGroupType.STRING, "Ash", "Fender",80, 249);
     }
     @Test
     public void canGetNoStrings() {
@@ -37,6 +37,10 @@ public class GuitarTest {
     @Test
     public void canPlay() {
         assertEquals("Twaaaang", guitar.play("Twaaaang"));
+    }
+    @Test
+    public void canGetMarkUp() {
+        assertEquals(169, guitar.calculateMarkUp());
     }
 
 }

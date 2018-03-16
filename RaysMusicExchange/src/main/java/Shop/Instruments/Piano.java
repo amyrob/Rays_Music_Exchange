@@ -1,11 +1,11 @@
-package Instruments;
+package Shop.Instruments;
 
 public class Piano extends Instrument {
     private int noKeys;
     private String type;
 
-    public Piano(int noKeys, String type, InstrumentGroupType instrumentType, String material, String brand) {
-        super(instrumentType, material, brand);
+    public Piano(int noKeys, String type, InstrumentGroupType instrumentType, String material, String brand, int buyPrice, int sellPrice) {
+        super(instrumentType, material, brand, buyPrice, sellPrice);
         {
             this.noKeys = noKeys;
             this.type = type;
