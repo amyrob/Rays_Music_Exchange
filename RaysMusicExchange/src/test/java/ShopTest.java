@@ -22,7 +22,6 @@ public class ShopTest {
         guitar = new Guitar(6, "Accoustic", InstrumentGroupType.STRING, "Mahogany", "Yahmaha", 100, 250);
         piano = new Piano(81, "Baby Grand", InstrumentGroupType.KEYS, "Oak", "Yamaha", 1500, 3000);
         drumKit = new DrumKit(5, "Junior", InstrumentGroupType.PERCUSSION, "Birch", "Ludwig", 150, 450);
-
     }
 
     @Test
@@ -31,8 +30,10 @@ public class ShopTest {
     }
     @Test
     public void canRemoveStock() {
-        shop.addStock(stock);
-        assertEquals(0, shop.removeStock(stock));
+        shop.addStock(guitar);
+        shop.addStock(piano);
+        shop.addStock(drumKit);
+        assertEquals(2, shop.removeStock(piano));
     }
     @Test
 public void canGetShopProfit() {
